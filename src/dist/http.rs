@@ -321,6 +321,7 @@ mod server {
     use std::ops::DerefMut;
 
     use std::net::{IpAddr, SocketAddr};
+    use rsa_pem::KeyExt;
 
     pub(crate) fn create_https_cert_and_privkey(
         addr: SocketAddr,
