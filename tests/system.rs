@@ -24,13 +24,13 @@ use crate::harness::{
     write_json_cfg, write_source, zero_stats,
 };
 use assert_cmd::prelude::*;
+use fs_err::{self, File};
 use log::Level::Trace;
 use predicates::prelude::*;
 use std::collections::HashMap;
 use std::env;
 use std::ffi::{OsStr, OsString};
 use std::fmt;
-use fs_err::{self, File};
 use std::io::{self, Read, Write};
 use std::path::{Path, PathBuf};
 use std::process::{Command, Output, Stdio};

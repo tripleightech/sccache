@@ -15,13 +15,13 @@
 use crate::mock_command::{CommandChild, RunCommand};
 use blake3::Hasher as blake3_Hasher;
 use byteorder::{BigEndian, ByteOrder};
+use fs_err::File;
 use futures::{future, Future};
 use futures_03::executor::ThreadPool;
 use futures_03::future::TryFutureExt;
 use futures_03::task;
 use serde::Serialize;
 use std::ffi::{OsStr, OsString};
-use fs_err::File;
 use std::hash::Hasher;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};

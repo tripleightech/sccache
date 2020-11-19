@@ -18,10 +18,10 @@ use crate::compiler::{clang, Cacheable, ColorMode, CompileCommand, CompilerArgum
 use crate::dist;
 use crate::mock_command::{CommandCreatorSync, RunCommand};
 use crate::util::{run_input_output, OsStrExt};
+use fs_err::File;
 use log::Level::Trace;
 use std::collections::HashMap;
 use std::ffi::OsString;
-use fs_err::File;
 use std::io::Read;
 use std::path::{Path, PathBuf};
 use std::process;

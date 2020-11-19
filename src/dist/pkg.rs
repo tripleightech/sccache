@@ -54,8 +54,8 @@ mod toolchain_imp {
 #[cfg(all(target_os = "linux", target_arch = "x86_64"))]
 mod toolchain_imp {
     use super::tarify_path;
-    use std::collections::BTreeMap;
     use fs_err as fs;
+    use std::collections::BTreeMap;
     use std::io::{Read, Write};
     use std::path::{Component, Path, PathBuf};
     use std::process;
@@ -172,9 +172,7 @@ mod toolchain_imp {
             }
             for (tar_path, file_path) in file_set.into_iter() {
                 let file = fs::File::open(file_path)?;
-                let mut file = unsafe {
-                    std::fs::File::from_raw_fd(file.into_raw_fd())
-                };
+                let mut file = unsafe { std::fs::File::from_raw_fd(file.into_raw_fd()) };
                 builder.append_file(tar_path, &mut file)?
             }
             builder.finish().map_err(Into::into)

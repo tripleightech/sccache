@@ -5,14 +5,14 @@ extern crate log;
 //extern crate lru_cache;
 pub mod lru_cache;
 
+use fs::File;
+use fs_err as fs;
 use std::borrow::Borrow;
 use std::boxed::Box;
 use std::collections::hash_map::RandomState;
 use std::error::Error as StdError;
 use std::ffi::{OsStr, OsString};
 use std::fmt;
-use fs_err as fs;
-use fs::File;
 use std::hash::BuildHasher;
 use std::io;
 use std::io::prelude::*;

@@ -22,9 +22,9 @@ fn test_rust_cargo() {
 fn test_rust_cargo_cmd(cmd: &str) {
     use assert_cmd::prelude::*;
     use chrono::Local;
+    use fs_err as fs;
     use predicates::prelude::*;
     use std::env;
-    use fs_err as fs;
     use std::io::Write;
     use std::path::Path;
     use std::process::{Command, Stdio};

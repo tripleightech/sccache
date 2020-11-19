@@ -30,6 +30,7 @@ use crate::protocol::{Compile, CompileFinished, CompileResponse, Request, Respon
 use crate::util;
 use anyhow::Context as _;
 use filetime::FileTime;
+use fs_err::metadata;
 use futures::sync::mpsc;
 use futures::{future, stream, Async, AsyncSink, Future, Poll, Sink, StartSend, Stream};
 use futures_03::compat::Compat;
@@ -39,7 +40,6 @@ use std::cell::RefCell;
 use std::collections::HashMap;
 use std::env;
 use std::ffi::{OsStr, OsString};
-use fs_err::metadata;
 use std::io::{self, Write};
 #[cfg(feature = "dist-client")]
 use std::mem;

@@ -26,6 +26,7 @@ use crate::mock_command::{CommandCreatorSync, RunCommand};
 use crate::util::{fmt_duration_as_secs, hash_all, run_input_output, Digest};
 use crate::util::{ref_env, HashToDigest, OsStrExt, SpawnExt};
 use filetime::FileTime;
+use fs_err as fs;
 use futures::Future;
 use futures_03::executor::ThreadPool;
 use log::Level::Trace;
@@ -43,7 +44,6 @@ use std::env::consts::DLL_EXTENSION;
 use std::env::consts::{DLL_PREFIX, EXE_EXTENSION};
 use std::ffi::OsString;
 use std::fmt;
-use fs_err as fs;
 use std::hash::Hash;
 #[cfg(feature = "dist-client")]
 use std::io;
@@ -2297,9 +2297,9 @@ mod test {
     use crate::compiler::*;
     use crate::mock_command::*;
     use crate::test::utils::*;
+    use fs_err::File;
     use itertools::Itertools;
     use std::ffi::OsStr;
-    use fs_err::File;
     use std::io::Write;
     use std::sync::{Arc, Mutex};
 
