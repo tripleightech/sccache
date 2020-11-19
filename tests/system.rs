@@ -24,8 +24,8 @@ use crate::harness::{
     write_json_cfg, write_source, zero_stats,
 };
 use assert_cmd::prelude::*;
-use fs_err as fs;
 use fs::File;
+use fs_err as fs;
 use log::Level::Trace;
 use predicates::prelude::*;
 use std::collections::HashMap;

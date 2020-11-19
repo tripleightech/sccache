@@ -13,8 +13,8 @@
 // limitations under the License.
 
 use crate::mock_command::*;
-use fs_err as fs;
 use fs::File;
+use fs_err as fs;
 use std::collections::HashMap;
 use std::env;
 use std::ffi::OsString;

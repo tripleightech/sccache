@@ -283,8 +283,8 @@ mod client {
     mod test {
         use crate::config;
         use crate::test::utils::create_file;
-        use std::io::Write;
         use fs_err as fs;
+        use std::io::Write;
 
         use super::ClientToolchains;
 
