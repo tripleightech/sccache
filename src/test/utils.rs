@@ -13,7 +13,8 @@
 // limitations under the License.
 
 use crate::mock_command::*;
-use fs_err::{self, File};
+use fs_err as fs;
+use fs::File;
 use std::collections::HashMap;
 use std::env;
 use std::ffi::OsString;
@@ -148,7 +149,7 @@ pub fn mk_bin_contents<F: FnOnce(File) -> io::Result<()>>(
     path: &str,
     fill_contents: F,
 ) -> io::Result<PathBuf> {
-    use std::os::unix::fs::OpenOptionsExt;
+    use fs_err::os::unix::fs::OpenOptionsExt;
     let bin = dir.join(path);
     let parent = bin.parent().unwrap();
     fs::create_dir_all(&parent)?;
@@ -200,7 +201,7 @@ impl TestFixture {
             .prefix("sccache_test")
             .tempdir()
             .unwrap();
-        let mut builder = fs::DirBuilder::new();
+        let mut builder = std::fs::DirBuilder::new();
         builder.recursive(true);
         let mut paths = vec![];
         let mut bins = vec![];

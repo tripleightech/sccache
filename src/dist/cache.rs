@@ -284,6 +284,7 @@ mod client {
         use crate::config;
         use crate::test::utils::create_file;
         use std::io::Write;
+        use fs_err as fs;
 
         use super::ClientToolchains;
 
@@ -295,7 +296,7 @@ mod client {
         }
         #[cfg(all(target_os = "linux", target_arch = "x86_64"))]
         impl crate::dist::pkg::ToolchainPackager for PanicToolchainPackager {
-            fn write_pkg(self: Box<Self>, _f: ::fs::File) -> crate::errors::Result<()> {
+            fn write_pkg(self: Box<Self>, _f: fs::File) -> crate::errors::Result<()> {
                 panic!("should not have called packager")
             }
         }
