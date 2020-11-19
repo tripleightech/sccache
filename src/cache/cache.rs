@@ -27,9 +27,9 @@ use crate::config::{self, CacheType, Config};
 use crate::util::SpawnExt;
 use futures_03::executor::ThreadPool;
 use std::fmt;
-use std::fs;
+use fs_err as fs;
 #[cfg(feature = "gcs")]
-use std::fs::File;
+use fs::File;
 use std::io::{self, Cursor, Read, Seek, Write};
 use std::path::{Path, PathBuf};
 use std::sync::Arc;

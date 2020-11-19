@@ -11,7 +11,8 @@ use std::collections::hash_map::RandomState;
 use std::error::Error as StdError;
 use std::ffi::{OsStr, OsString};
 use std::fmt;
-use std::fs::{self, File};
+use fs_err as fs;
+use fs::File;
 use std::hash::BuildHasher;
 use std::io;
 use std::io::prelude::*;
@@ -319,7 +320,7 @@ mod tests {
     use super::{Error, LruDiskCache};
 
     use filetime::{set_file_times, FileTime};
-    use std::fs::{self, File};
+    use fs_err::{self, File};
     use std::io::{self, Read, Write};
     use std::path::{Path, PathBuf};
     use tempfile::TempDir;

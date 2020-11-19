@@ -26,7 +26,7 @@ use local_encoding::{Encoder, Encoding};
 use log::Level::Debug;
 use std::collections::{HashMap, HashSet};
 use std::ffi::{OsStr, OsString};
-use std::fs::File;
+use fs_err::File;
 use std::io::{self, BufWriter, Write};
 use std::path::{Path, PathBuf};
 use std::process::{self, Stdio};

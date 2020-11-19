@@ -34,8 +34,8 @@ use std::collections::HashMap;
 use std::ffi::OsString;
 use std::fmt;
 #[cfg(feature = "dist-client")]
-use std::fs;
-use std::fs::File;
+use fs_err as fs;
+use fs_err::File;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};
 use std::process::{self, Stdio};
@@ -1145,7 +1145,7 @@ mod test {
     use crate::test::utils::*;
     use futures::{future, Future};
     use futures_03::executor::ThreadPool;
-    use std::fs::{self, File};
+    use fs_err::{self, File};
     use std::io::Write;
     use std::sync::Arc;
     use std::time::Duration;

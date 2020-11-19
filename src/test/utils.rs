@@ -16,7 +16,7 @@ use crate::mock_command::*;
 use std::collections::HashMap;
 use std::env;
 use std::ffi::OsString;
-use std::fs::{self, File};
+use fs_err::{self, File};
 use std::io;
 use std::path::{Path, PathBuf};
 

@@ -2,7 +2,7 @@
 #![cfg(all(feature = "dist-client"))]
 
 use selenium_rs::webdriver::{Browser, Selector, WebDriver};
-use std::fs;
+use fs_err as fs;
 use std::io::{self, Read, Write};
 use std::net::TcpStream;
 use std::path::Path;

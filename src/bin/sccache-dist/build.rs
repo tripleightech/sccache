@@ -21,7 +21,7 @@ use sccache::dist::{
     Toolchain,
 };
 use std::collections::{hash_map, HashMap};
-use std::fs;
+use fs_err as fs;
 use std::io;
 use std::iter;
 use std::path::{self, Path, PathBuf};

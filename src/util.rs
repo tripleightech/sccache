@@ -21,7 +21,7 @@ use futures_03::future::TryFutureExt;
 use futures_03::task;
 use serde::Serialize;
 use std::ffi::{OsStr, OsString};
-use std::fs::File;
+use fs_err::File;
 use std::hash::Hasher;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};

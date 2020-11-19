@@ -39,7 +39,7 @@ use std::cell::RefCell;
 use std::collections::HashMap;
 use std::env;
 use std::ffi::{OsStr, OsString};
-use std::fs::metadata;
+use fs_err::metadata;
 use std::io::{self, Write};
 #[cfg(feature = "dist-client")]
 use std::mem;
@@ -114,7 +114,7 @@ fn notify_server_startup(name: &Option<OsString>, status: ServerStartup) -> Resu
 
 #[cfg(windows)]
 fn notify_server_startup(name: &Option<OsString>, status: ServerStartup) -> Result<()> {
-    use std::fs::OpenOptions;
+    use fs_err::OpenOptions;
 
     let name = match *name {
         Some(ref s) => s,

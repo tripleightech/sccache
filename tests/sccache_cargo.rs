@@ -24,7 +24,7 @@ fn test_rust_cargo_cmd(cmd: &str) {
     use chrono::Local;
     use predicates::prelude::*;
     use std::env;
-    use std::fs;
+    use fs_err as fs;
     use std::io::Write;
     use std::path::Path;
     use std::process::{Command, Stdio};
